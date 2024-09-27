@@ -1,0 +1,17 @@
+﻿@page
+@model Demo
+@{
+}
+<div class="my-5 text-center">
+
+    <h3>
+
+    hello @Model.Name
+    </h3>
+   <form method="post" asp-page="/demo">
+   <div class="form-group">
+        <input class="form-control" name="name" placeholder="İsminizi giriniz"/>
+        <button type="submit" class="btn btn-primary my-3">Kaydet</button>
+    </div>
+</form>
+</div>

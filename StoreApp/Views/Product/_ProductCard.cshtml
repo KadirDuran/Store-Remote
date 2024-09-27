@@ -1,0 +1,26 @@
+﻿@model Product
+<div class="col-12 col-md-6 col-lg-4 my-4 ">
+<div class="card" style="width: 18rem;">
+    <img src="@Model.imageUrl" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">@Model.productName</h5>
+        <p class="card-text">@Model.productPrice.ToString()</p>
+
+            <p>
+                
+            <a class="btn btn-primary" asp-controller="Product" asp-action="Get" asp-route-id="@Model.productId">
+            <i class="fa-solid fa-arrow-right"></i>Detay</a>
+                <form id="@Model.productId" asp-page="/cartmodel"  method="post">
+                    <input type="hidden" asp-for="@Model.productId" />
+                    <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+               
+                    <button type="submit" class="btn btn-warning float-end">
+                        <i class="fa-solid fa-plus"></i>Sepete Ekle</button>
+                </form>
+               
+                </p>
+       
+           
+    </div>
+    </div>
+</div>

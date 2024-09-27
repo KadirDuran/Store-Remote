@@ -1,0 +1,43 @@
+﻿@model Product
+
+
+
+<div class="text-center">
+    <div class="display-6">Ürün Oluştur</div>
+    
+</div>
+<form method="Post" asp-action="Create" enctype="multipart/form-data">
+    <div class="text-danger" asp-validation-summary="All"></div>
+    <div class="form-group my-3">
+    
+<select class="form-control" asp-for="categoryId"  asp-items="@ViewBag.Categories"></select>
+</div>
+<div class="form-group my-3">
+    
+<input class="form-control " asp-for="productName" placeholder="Ürün İsmi Giriniz.." />
+
+</div>
+<div class="form-groupmy-3">
+
+<input class="form-control " asp-for="productPrice" placeholder="Ürün Fiyatı Giriniz.." />
+</div>
+<div class="form-group my-3">
+    
+<input class="form-control " asp-for="summary" placeholder="Ürün Açıklaması Giriniz.." />
+
+</div>
+<div class="form-group my-3">
+    
+<input class="form-control " name="file" type="file" />
+
+</div>
+<div class="form-group my-3">
+<div class="btn-group ">
+<button type="submit" asp-action="Create" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i>Ürünü Kaydet</button>
+</div>
+<div class="btn-group">
+<button asp-controller="Dashboard" asp-action="Index" class="btn btn-danger "><i class="fa-solid fa-xmark"></i>Admin Paneline Dön</button>
+</div>
+</div>
+</form>
+

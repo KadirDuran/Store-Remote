@@ -1,0 +1,24 @@
+﻿
+@model Product
+
+
+<div class="d-flex justify-content-center">
+<div class="card" style="width: 18rem;">
+    <img src="@Model.imageUrl" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">@Model.productName</h5>
+        <p class="card-text">@Model.productPrice.ToString()</p>
+        <p class="card-text">Ürün Kodu : @Model.productId</p>
+        <div class="btn-group">
+
+            <a class="btn btn-primary" asp-controller="Home" asp-action="Index">
+                <i class="fa-solid fa-house"></i> Anasayfa
+            </a>
+            <a class="btn btn-outline-primary" asp-controller="Product" asp-action="Index"><i class="fa-solid fa-list"></i>Ürünler</a>
+
+        </div>
+    </div>
+</div>
+
+
+</div>
